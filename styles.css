@@ -1,0 +1,224 @@
+/* styles.css */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f2f2f2; /* mismo color que el header */
+  }
+
+  header {
+    margin-top: 20px; /* Ajusta el valor a tu gusto */
+    background-color: #0056b3;  }
+
+  /* ====== Header (barra superior) ====== */
+  .header-container {
+    display: flex;
+    align-items: stretch; /* Para que los elementos hijos puedan ocupar 100% del alto */
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #ccc;
+    height: 60px; /* Ajusta según necesites */
+    padding: 0;   /* El padding se manejará en las pestañas y/o el logo */
+    margin: 0;
+  }
+  
+  .header-logo {
+    height: 100%; /* O un valor menor si prefieres */
+    /* margin-left: 1rem; ... etc. */
+  }
+  
+  .nav-tabs {
+    display: flex;
+    height: 100%;
+  }
+  
+  .tab {
+    display: flex;             /* Para alinear el texto verticalmente */
+    align-items: center;       /* Centra verticalmente el texto */
+    justify-content: center;   /* Centra horizontalmente dentro de la pestaña */
+    height: 100%;              /* Ocupar todo el alto del header */
+    padding: 0 1rem;           /* Espacio horizontal */
+    text-decoration: none;     /* Quitar subrayado */
+    color: #333;
+    background-color: #e2e2e2; /* Gris claro para las pestañas inactivas */
+    border-right: 1px solid #ccc; /* Separador entre pestañas */
+    border-radius: 10px 10px 0 0; /* Bordes redondeados solo arriba */
+  }
+  
+  /* Última pestaña sin borde derecho (opcional) */
+  .nav-tabs .tab:last-child {
+    border-right: none;
+  }
+  
+  /* Al pasar el ratón */
+  .tab:hover {
+    background-color: #ccc;
+  }
+  
+  /* Pestaña activa (seleccionada) */
+  .tab.active {
+    background-color: #555; /* Gris oscuro */
+    color: #fff;            /* Texto blanco */
+    border-radius: 10px 10px 0 0; /* Bordes redondeados solo arriba */
+  }
+  
+  /* ====== Sección de texto introductorio ====== */
+  .intro-text {
+    margin: 1rem 2rem;
+  }
+  .intro-text h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  /* ====== Contenedor principal con bordes redondeados ====== */
+  .content-wrapper {
+    margin: 1rem 2rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #d0d0d0;
+  }
+  
+  /* ====== Layout de la página de Reportes Publicados (3 columnas) ====== */
+  .layout-container {
+    display: flex;
+    height: calc(100vh - 200px); /* Ajusta según el espacio que ocupe tu header */
+    overflow: hidden;
+  }
+  
+  /* Panel izquierdo (filtros) */
+  .sidebar {
+    width: 20%;
+    background-color: #f7f7f7;
+    padding: 1rem;
+    overflow-y: auto;
+    border-right: 2px solid #ccc;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .sidebar h2 {
+    margin-top: 0;
+  }
+  
+  .content-section {
+    width: 80%;
+    display: flex;
+    /* No ponemos transition aquí, la manejaremos en .main-content y .detail-panel */
+  }
+
+  .filter-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .filter-section h3 {
+    margin: 0.5rem 0;
+  }
+  
+  .tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .tag {
+    padding: 0.3rem 0.6rem;
+    border: 1px solid #007BFF;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #007BFF;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+  
+  .tag.selected {
+    background-color: #007BFF;
+    color: #fff;
+  }
+  
+  /* Sección central (tabla de resultados) */
+  .main-content {
+    width: 100%;
+    min-width: 0;
+    transition: width 0.4s ease; /* Animación de cambio de tamaño */
+    padding: 1rem;
+    overflow-y: auto;
+  }
+  
+  .main-content h1 {
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  
+  .table-container {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-container th,
+  .table-container td {
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem;
+  }
+  
+  .table-container tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  /* Panel derecho (detalle) */
+  .detail-panel {
+    width: 0;
+    min-width: 0;
+    transition: width 0.4s ease;
+    overflow: hidden;         /* Para que no se vea el contenido cuando width=0 */
+    background-color: #fafafa; /* Algo distinto para el panel */
+    padding: 0;
+    border-radius: 10px;
+  }
+  
+  .detail-panel h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
+  
+  /* Botones de enlace dentro del panel derecho */
+  .detail-panel a {
+    display: inline-block;
+    margin: 0.5rem 0.5rem 0.5rem 0; /* algo de margen */
+    padding: 0.4rem 0.8rem;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+
+  .detail-panel a:hover {
+    background-color: #0056b3;
+  }
+
+  /* Cuando queremos mostrar el panel, 
+   agregamos la clase .show-detail a .content-section */
+  .content-section.show-detail .main-content {
+    width: 70%; /* Se reduce a 70% */
+  }
+
+  .content-section.show-detail .detail-panel {
+    width: 30%; /* Pasa de 0 a 30% */
+    padding: 1rem; /* Recupera el padding cuando está abierto */
+    overflow-y: auto; /* <--- NUEVO */
+  }
+
+  tr.selected {
+    background-color: #0056b3; 
+    color: fff;/* Un color de fondo claro para destacar */
+  }  
+
+  .hidden {
+    display: none;
+  }
+  

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reportes Publicados</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="header-container">
+      <!-- Logo -->
+      <img src="img/header.png" alt="Logo" class="header-logo">
+      <!-- Tabs -->
+      <nav class="nav-tabs">
+        <a href="index.html" class="tab active">Reportes Publicados</a>
+        <a href="convenios.html" class="tab">Convenios</a>
+        <a href="integracion.html" class="tab">Integración</a>
+      </nav>
+    </div>
+  </header>  
+
+  <!-- Texto introductorio -->
+  <section class="intro-text">
+    <h2><strong>Catálogo de Reportes:</strong></h2>
+    <p>Listado de reportes y repositorios de información publicados por el Centro de Datos e Inteligencia Artificial</p>
+  </section>
+
+  <!-- Contenedor con bordes redondeados -->
+  <div class="content-wrapper">
+    <!-- Estructura de tres columnas -->
+    <div class="layout-container">
+      <!-- Panel izquierdo (filtros) -->
+      <div class="sidebar">
+        <h2>Filtros</h2>
+
+        <div class="filter-section">
+          <h3>Función</h3>
+          <div class="tag-container" id="funcion-tags"></div>
+        </div>
+
+        <div class="filter-section">
+          <h3>Temática</h3>
+          <div class="tag-container" id="tematica-tags"></div>
+        </div>
+
+        <div class="filter-section">
+          <h3>Unidad</h3>
+          <div class="tag-container" id="unidad-tags"></div>
+        </div>
+      </div>
+
+    <div class="content-section" id="content-section">
+      <!-- Sección central (tabla de resultados) -->
+      <div class="main-content" id="main-content">
+        <h1>Catálogo de Información</h1>
+        <table class="table-container" id="results-table">
+          <thead>
+            <tr>
+              <th>Nombre del reporte</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filas generadas dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Panel derecho (detalle) -->
+      <!-- Panel derecho (detalle) -->
+      <div class="detail-panel" id="detail-panel">
+        <h2>Descripción de Reporte</h2>
+        <div id="detail-links"></div>
+        <p id="detail-description"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script principal (puedes separarlo en scripts.js si lo prefieres) -->
+  <script src="scripts.js"></script>
+</body>
+</html>
